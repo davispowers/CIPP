@@ -16,7 +16,7 @@ jobs:
     name: Auto Update from Upstream
     strategy:
       matrix:
-        branch: [main, interface-rewrite]
+        branch: [main]  # Only sync the main branch
     steps:
       - uses: actions/checkout@v3
         with:
@@ -40,8 +40,8 @@ jobs:
       - name: Create Pull Request
         uses: repo-sync/pull-request@v2
         with:
-          source_branch: ${{ matrix.branch }}
-          destination_branch: ${{ matrix.branch }}
+          source_branch: "upstream/${{ matrix.branch }}"
+          destination_branch: "${{ matrix.branch }}"
           pr_title: "chore: Auto-sync with upstream (${{ matrix.branch }})"
           pr_body: "Automated PR to sync changes from upstream repository"
           pr_label: "auto-sync"
