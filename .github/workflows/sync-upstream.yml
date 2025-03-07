@@ -42,14 +42,14 @@ jobs:
           force: true
           
       - name: Create Pull Request
-        uses: repo-sync/pull-request@v2
+        uses: peter-evans/create-pull-request@v5
         with:
-          source_branch: "upstream-sync"
-          destination_branch: "main"
-          pr_title: "chore: sync changes from upstream repository"
-          pr_body: |
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: upstream-sync
+          base: main
+          title: "chore: sync changes from upstream repository"
+          body: |
             This PR syncs changes from the upstream CIPP repository.
             
             Please review the changes carefully before merging to ensure no custom modifications are overwritten.
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          pr_allow_empty: false
+          delete-branch: false
