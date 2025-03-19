@@ -9,3 +9,6 @@ rules:
   - base: website
     upstream: KelvinTegelaar:website
     mergeMethod: merge
+  - base: interface-rewrite
+    upstream: KelvinTegelaar:interface-rewrite
+    mergeMethod: merge
