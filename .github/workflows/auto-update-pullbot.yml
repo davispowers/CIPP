@@ -16,7 +16,7 @@ jobs:
     name: Auto Update from Upstream
     strategy:
       matrix:
-        branch: [main]  # Only sync the main branch
+        branch: [main, interface-rewrite]  # Sync both main and interface-rewrite branches
     steps:
       - uses: actions/checkout@v3
         with:
