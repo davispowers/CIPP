@@ -15,7 +15,13 @@ All synchronization is one-way: FROM upstream TO this fork.
 
 List any files that have been customized in this fork:
 
-### Example format:
+### staticwebapp.config.json
+- **Date**: June 3, 2025
+- **Changes**: Accepted upstream version during v8.0.1 sync
+- **Conflict Resolution**: Use upstream version (contains routes configuration)
+- **Note**: This file configures Azure Static Web App routing and security
+
+### Example format for future entries:
 ```
 File: src/components/CustomComponent.js
 Changes: Added custom branding and logo
